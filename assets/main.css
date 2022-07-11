@@ -1,0 +1,194 @@
+:root {
+  --hue: 270;
+  --colorized1: hsl(var(--hue), 17%, 98%);
+  --colorized2: hsl(var(--hue), 16%, 93%);
+  --colorized3: hsl(var(--hue), 14%, 89%);
+  --colorized4: hsl(var(--hue), 14%, 83%);
+  --colorized5: hsl(var(--hue), 11%, 71%);
+  --colorized6: hsl(var(--hue), 7%, 46%);
+  --colorized7: hsl(var(--hue), 9%, 31%);
+  --colorized8: hsl(var(--hue), 10%, 23%);
+  --colorized9: hsl(var(--hue), 11%, 15%);
+  --color-white: var(--colorized1);
+  --color-black: var(--colorized7);
+  --body-font: 'Quicksand', sans-serif;
+  --success-bg-color: #c1d5ba;
+  --success-color: #3d642f;
+  --error-bg-color: #d5baba;
+  --error-color: #642f2f;
+  --colorized-width: 142px;
+  --colorized-height: 120px; }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: 0; }
+
+body {
+  font-family: var(--body-font);
+  font-weight: 600;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  word-wrap: break-word;
+  text-rendering: optimizeLegibility;
+  background-color: var(--colorized9);
+  color: var(--colorized1);
+}
+
+a {
+  text-decoration: none;
+  color: var(--colorized1);
+  transition: all .2s ease; }
+  a:hover {
+    color: var(--colorized2);
+    text-decoration: underline;
+  }
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto; }
+
+ul:not(class), ol:not(class) {
+  list-style-type: none; }
+
+.mt{
+  margin-top: 1rem;
+}
+.mb{
+  margin-bottom: 1rem;
+}
+.ml{
+  margin-left: 1rem;
+}
+.mr{
+  margin-right: 1rem;
+}
+
+.single__container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.manga_list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 4rem;
+}
+
+.manga_list li > a {
+  display: flex;
+  min-height: 160px;
+  align-items: center;
+}
+
+.manga_list img {
+  width: 200px;
+  height: auto;
+}
+
+.title {
+  font-size: 1rem;
+}
+
+.manga_list .title a {
+  padding: 0.31rem 1rem;
+  display: flex;
+  justify-content: center;
+  border: 1px solid var(--colorized4);
+}
+
+.manga_list .title.read_completed a,
+.manga_list .title.read a {
+  background-color: var(--colorized7);
+}
+
+.manga_list li {
+  position: relative;
+}
+
+.title.read_completed:before,
+.title.read:before {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  background-color: var(--colorized3);
+  color: #000;
+  padding: 0.2rem 0.5rem;
+  font-size: .8rem;
+  border-radius: 0.3rem;
+}
+.title.read:before {
+  content: "Okunuyor...";
+}
+.title.read_completed:before{
+  content: "Bitirildi";
+}
+
+.img {
+  max-width: 100%;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+}
+
+div[id*="img"] {
+  margin: 0 auto;
+}
+
+.dark .img {
+  filter: invert(.15);
+}
+
+
+#rtop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  display: none;
+  z-index: 9999;
+  text-align: center;
+  border-radius: 3px;
+  cursor: pointer;
+  background-color: var(--colorized5);
+  padding-top: 10px;
+  color: #000;
+}
+
+footer {
+  padding: 4rem;
+  background-color: var(--colorized8);
+}
+
+
+.numbers {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--colorized9);
+  z-index: 9;
+  display: flex;
+  flex-direction: column;
+  max-height: 100vh;
+  overflow: auto;
+  padding: 2rem;
+}
+body.inner {
+  margin-left: 180px;
+}
+
+.imglink.active {
+  background-color: var(--colorized3);
+  color: #000;
+}
+
+.imglink:not(.active).taret {
+  background-color: var(--colorized7);
+}
+.back {
+  max-width: 100px;
+}
