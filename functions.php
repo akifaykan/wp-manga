@@ -14,8 +14,14 @@ function kryex_scripts() {
     wp_dequeue_style( 'wp-block-library' );
     wp_enqueue_style('style', get_stylesheet_uri());
     wp_enqueue_style('fonts', 'https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap', [], null);
-    wp_enqueue_style('main', K_URI . '/assets/main.css', [], K_VER, 'all');
+    wp_enqueue_style('main', K_URI . '/assets/css/main.css', [], K_VER, 'all');
     
-    wp_enqueue_script('lazysizes', K_URI . '/assets/lazysizes.js', [], '5.1.2', true);
-    wp_enqueue_script('scripts', K_URI . '/assets/scripts.js', [], K_VER, true);
+    wp_enqueue_script('lazysizes', K_URI . '/assets/js/lazysizes.js', [], '5.1.2', true);
+    wp_enqueue_script('global', K_URI . '/assets/js/global.js', [], K_VER, true);
+
+    if ( !is_single() ) {
+        wp_enqueue_script('front', K_URI . '/assets/js/front.js', [], K_VER, true);
+    } else {
+        wp_enqueue_script('single', K_URI . '/assets/js/single.js', [], K_VER, true);
+    }
 }

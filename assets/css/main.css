@@ -139,9 +139,12 @@ div[id*="img"] {
 }
 
 .dark .img {
-  filter: invert(.15);
+  filter: invert(.08);
 }
 
+.home {
+    padding: 1rem 1rem 5rem;
+}
 
 #rtop {
   position: fixed;
@@ -164,7 +167,6 @@ footer {
   background-color: var(--colorized8);
 }
 
-
 .numbers {
   position: fixed;
   top: 0;
@@ -177,7 +179,7 @@ footer {
   overflow: auto;
   padding: 2rem;
 }
-body.inner {
+body:not(.home).inner {
   margin-left: 180px;
 }
 

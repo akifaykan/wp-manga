@@ -6,7 +6,7 @@
                 $loop = new WP_Query([
                     'posts_per_page' => -1,
                     'post_type' => 'manga',
-                    'order' => 'ASC',
+                    //'order' => 'ASC',
                 ]);
         
                 if( $loop->have_posts() ):
